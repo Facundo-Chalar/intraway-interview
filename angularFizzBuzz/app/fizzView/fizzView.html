@@ -1,0 +1,17 @@
+<form name="fizzForm" ng-submit="fizzCtrl.fizzBuzz()">
+	<div>
+		<label>
+			Primer valor (Min):
+			<input type="number" name="txtMinValue" ng-model="fizzCtrl.minValue" min="-2147483648" required>
+		</label>
+		<label>
+			Ultimo valor(Max):
+			<input type="number" name="txtMaxValue" ng-model="fizzCtrl.maxValue" max="2147483648" required>
+		</label>
+		<button type="submit" name="btnSubmit" value="submit">FizzBuzz!</button>
+	</div>
+</form>
+<div ng-if="fizzCtrl.fizzBuzzResponse">
+<span> Resultado: {{fizzCtrl.fizzBuzzResponse.description}} </span>
+	<json-formatter json="fizzCtrl.fizzBuzzResponse" open="2"> </json-formatter>
+<div>
